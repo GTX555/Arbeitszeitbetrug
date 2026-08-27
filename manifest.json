@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "💼 Arbeitszeitbetrug Arcade",
+  "version": "2.0.0",
+  "description": "Multiplayer arcade floating GUI with Tic-Tac-Toe and 4-Gewinnt (Connect 4) via WebRTC peer connection.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Arbeitszeitbetrug Arcade"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "lib/peerjs.min.js",
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
